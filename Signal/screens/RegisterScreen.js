@@ -18,10 +18,10 @@ useLayoutEffect(() => {
 
 const register = () => {
     auth.createUserWithEmailAndPassword(email, password).then(authUser => {
-        authUser.user.update({
+        authUser.user.updateProfile({
             displayName: name,
             photoURL: imageUrl || 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
-        })
+        });
     }).catch(error => alert(error.message));
 };
 
